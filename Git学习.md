@@ -59,7 +59,7 @@ $ git config --global user.email 2512@qq.com
 
 ### 2.3 查看本地库状态
 在本地库初始化成功后就可以查看当前本地库的状态了，使用命令**git status**。
-![git_status](git_statu.png)
+![git_status](picture/git_statu.png)
 
 如果是还未添加到暂存区的文件，在工作区被更改了也不会有历史版本的记录，所以，在使用Git版本控制系统前要将需要被git追踪的文件上传到暂存区。
 
