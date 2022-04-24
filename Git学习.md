@@ -54,28 +54,28 @@ $ git config --global user.email 2512@qq.com
 以上例子就是将用户设置为了hjj，用户的电子邮箱设置为了2512@qq.com。如果想要验证是否设置成功，就可以来到家目录下，当前使用用户的目录下有一个`.gitconfig`文件，设置的账号和邮箱就在里面。
 
 ### 2.2 初始化本地库
-首先来到需要使用版本控制的目录，然后在gitBash的命令行里输入**git init**，随即该目录下就会生成一个名为`.git`的隐藏文件目录
+首先来到需要使用版本控制的目录，然后在gitBash的命令行里输入**git init**，随即该目录下就会生成一个名为`.git`的隐藏文件目录  
 ![git_init命令示例图](picture/git_init.png)
 
 ### 2.3 查看本地库状态
-在本地库初始化成功后就可以查看当前本地库的状态了，使用命令**git status**。
-![git_status](git_statu.png)
+在本地库初始化成功后就可以查看当前本地库的状态了，使用命令**git status**。  
+![git_status](picture/git_statu.png)
 
 如果是还未添加到暂存区的文件，在工作区被更改了也不会有历史版本的记录，所以，在使用Git版本控制系统前要将需要被git追踪的文件上传到暂存区。
 
 ### 2.4 添加到暂存区
 如果在工作区里有文件需要被git追踪，那么可以使用命令**git add 文件名**将其添加到暂存区。但是注意，添加到暂存区并不意味着它就能够生成历史版本。
 
-操作如下图，先创建一个test.txt文件，然后将它添加到暂存区：
-![git_add.png](picture/git_add.png)
+操作如下图，先创建一个test.txt文件，然后将它添加到暂存区：  
+![git_add.png](picture/git_add.png)  
 将test.txt文件添加到暂存区后可以看到该文件变成了绿色，与没有添加到暂存区的`.md`[^1]文件和`picture/`目录不同颜色。
 
 ### 2.5 提交本地库
-将暂存区里的文件提交到本地库，然后形成历史版本，使用命令**git commit -m "日志信息" 文件名**。
+将暂存区里的文件提交到本地库，然后形成历史版本，使用命令**git commit -m "日志信息" 文件名**。  
 ![git_commit](picture/git_commit.png)
 
-在这之后可以使用**git reflog**、**git log**查看历史记录：
-![git_log](picture/git_log.png)
+在这之后可以使用**git reflog**、**git log**查看历史记录：  
+![git_log](picture/git_log.png)  
 git reflog：查看的是详细版本号前七位  
 git log：查看的是详细版本号
 
@@ -95,14 +95,14 @@ ccccccccccc
 ddddddddddd
 ```
 
-完成修改操作后查看git状态可以看见test.txt又变成红色了：
+完成修改操作后查看git状态可以看见test.txt又变成红色了：  
 ![](picture/test2.png)
 
-因此需要再将其提交到暂存区一次，然后上传本地库形成第二个版本：
+因此需要再将其提交到暂存区一次，然后上传本地库形成第二个版本：  
 ![](picture/changed.png)
 
 ### 2.7 版本穿梭
-如果觉得当前版本的文件没有上个版本的文件好，那么就可以使用命令**git reset --hard 版本号**将指针指向对应版本号的文件。
+如果觉得当前版本的文件没有上个版本的文件好，那么就可以使用命令**git reset --hard 版本号**将指针指向对应版本号的文件。  
 ![git_reset](picture/git_reset.png)
 
 可以来到工作区的目录下查看该文件，可以发现的的确确内容变成了之前第一个版本的样子。
@@ -245,10 +245,10 @@ ccccccccccc
 	222222222222
 	```
 	
-5. 然后使用查看本地库状态可以看见，修改完后还需要再走一边加载暂存区和上传本地库的操作：
+5. 然后使用查看本地库状态可以看见，修改完后还需要再走一边加载暂存区和上传本地库的操作：  
 	![](picture/tm.png)
 	
-6. 注意，在加载到暂存区后，如果要上传到本地库，就不能再显示的调用被修改的文件名了：
+6. 注意，在加载到暂存区后，如果要上传到本地库，就不能再显示的调用被修改的文件名了：  
 	![](picture/mt.png)
 	
 	
@@ -262,24 +262,24 @@ ccccccccccc
 |git pull 远程库地址别名 远程分支名|将远程仓库对于分支最新内容拉取下来后与当前本地分支直接合并|
 
 ### 4.1 创建远程仓库别名
-https://github.com/ssssbbbbb/git_learning-.git  
+https://github.com/ssssbbbbb/git_learning-.git    
 ![创建远程库](picture/git_remote_add.png)
 
 ### 4.2 推送本地库到远程库
-语法：**git push 别名or地址 分支**
-![push](picture/push.png)
+语法：**git push 别名or地址 分支**  
+![push](picture/push.png)  
 ![github](picture/GitHub1.png)
 
-如果想知道到底哪些文件被git追踪了，可以先查看当前目录的所有文件，然后再查看git状态，就知道哪些文件是可以被推送的，哪些文件是还没git追踪的，需要加载暂存区然后上传本地库的：
+如果想知道到底哪些文件被git追踪了，可以先查看当前目录的所有文件，然后再查看git状态，就知道哪些文件是可以被推送的，哪些文件是还没git追踪的，需要加载暂存区然后上传本地库的：  
 ![red](picture/red.png)
 
 ### 4.3 拉取远程仓库到本地库
 就是让本地库的文件与远程库的文件同步，命令是：  
 **git pull 远程库地址别名 远程分支名**
 
-1. 先在GitHub上新建了文件，gitHubTest.py，然后要同步本地库与Github的文件：
-	![](picture/GitHub2.png)
-	![](picture/g-m.png)
+1. 先在GitHub上新建了文件，gitHubTest.py，然后要同步本地库与Github的文件：  
+	![](picture/GitHub2.png)  
+	![](picture/g-m.png)  
 
 ### 4.4 克隆远程库到本地库
 就是将远程库中的内容复制到本地库，使用命令：**git clone 远程地址**
@@ -290,9 +290,26 @@ https://github.com/ssssbbbbb/Study_the_warehouse.git
 总是克隆失败，算了。
 
 ### 4.5 邀请加入团队
-开源的项目对于其它人只有阅读的权限，普通人开源将代码下载下来阅读并在本地做修改，但是普通人是无法对改项目的远程库进行推送的，必须要被那个项目的管理员邀请才能有修改远程仓库的权限。
-![](picture/添加成员1.png)
+开源的项目对于其它人只有阅读的权限，普通人开源将代码下载下来阅读并在本地做修改，但是普通人是无法对改项目的远程库进行推送的，必须要被那个项目的管理员邀请才能有修改远程仓库的权限。  
+![](picture/添加成员1.png)  
 ![](picture/添加成员2.png)
 发起邀请后，被邀请人的GitHub里就会接到被邀请信息，只要同意了就可以对改项目的远程库进行推送操作。
+
+## 五、ssh免密登陆
+在实行远程仓库连接时，除了http连接方式外还有一个ssh连接方式，就是如图：  
+![](picture/ssh.png)
+
+而在ssh连接前，需要先生成ssh公钥，获取公钥的命令为：**ssh-keygen -t rsa -c 2512776244@qq.com**
+- ssh-keygen，是获取公钥的命令；  
+- -t rsa，是获取公钥的方式，这里的方式是rsa；  
+- -c ... 是描述。
+
+获取了ssh公钥后，就把公钥复制，然后粘贴到需要免密登陆的GitHub账号里：  
+![](picture/ssh2.png)
+
+![](picture/ssh3.png)
+
+之后就可以使用ssh来推送和拉取了。
+
 
 [^1]:因为这个文件我是以中文命名的，所以出现了乱码，因此我以.md文件代替该文件名。
