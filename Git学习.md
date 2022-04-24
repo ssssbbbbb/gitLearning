@@ -58,6 +58,7 @@ $ git config --global user.email 2512@qq.com
 ![git_init命令示例图](picture/git_init.png)
 
 ### 2.3 查看本地库状态
+
 在本地库初始化成功后就可以查看当前本地库的状态了，使用命令**git status**。  
 ![git_status](picture/git_statu.png)
 
